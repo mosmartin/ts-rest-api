@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 
 import { connect } from "./utils/connect";
+import { log as logger } from "./utils/logger";
 
 const app = express();
 
@@ -11,5 +12,5 @@ const port = process.env.PORT;
 
 app.listen(port, async () => {
   await connect();
-  console.log(`\n🚀 server running on port ${port}`);
+  logger.info(`🚀 server running at http://localhost:${port}`);
 });

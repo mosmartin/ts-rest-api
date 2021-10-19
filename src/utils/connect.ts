@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+import { log as logger } from "./logger";
+
 dotenv.config();
 
 export const connect = async () => {
@@ -8,10 +10,10 @@ export const connect = async () => {
 
   try {
     await mongoose.connect(dbUrl!);
-    console.log("🟢 dbconn successful");
+    logger.info("🟢 dbconn successful");
   } catch (error) {
-    console.log("🔴 dbconn failed");
-    console.log(error);
+    logger.error("🔴 dbconn failed");
+    logger.error(error);
     process.exit(1);
   }
 };

@@ -4,6 +4,7 @@
   "description": "Typescript RESTful API",
   "main": "index.js",
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only ./src/app.ts",
     "test": "jest"
   },
   "repository": {
